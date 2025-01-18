@@ -51,32 +51,25 @@ function App() {
           <button onClick={initsearch}>Enter</button>
         </div>
         <div>
-        {cdata ? (
-          <div>
-            <Map
-            initialViewState={{
-              longitude: cIPdet.longitude || 0,
-              latitude: cIPdet.latitude || 0,
-              zoom: 12,
-            }}
-            style={{ width: 900, height: 400,fontSize:0 }}
-            mapStyle="https://api.maptiler.com/maps/streets/style.json?key=SjSnUEMaVUEmC0E8TN03	"
-          />
-          </div>
-        ) : (
-          <div>
-            <Map
-            initialViewState={{
-              longitude: 0.000000,
-              latitude: 0.000000,
-              zoom: 1,
-            }}
-            style={{ width: 900, height: 400,fontSize:0 }}
-            mapStyle="https://api.maptiler.com/maps/streets/style.json?key=SjSnUEMaVUEmC0E8TN03	"
-          />
-          </div>
-        )}
-          
+          {cIPdet ? (
+              <div>
+                <Map
+                  initialViewState={{
+                    longitude: cIPdet.longitude || 0,
+                    latitude: cIPdet.latitude || 0,
+                    zoom: 12,
+                  }}
+                  style={{ width: 900, height: 400,fontSize:0 }}
+                  mapStyle="https://api.maptiler.com/maps/streets/style.json?key=SjSnUEMaVUEmC0E8TN03	"
+                />
+              </div>
+          ) : (
+            <div>
+              Result Here
+            </div>
+          )}
+          <br />
+          <hr />
         </div>
       </div>
       <div>
