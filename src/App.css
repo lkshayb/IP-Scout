@@ -7,6 +7,30 @@
     src: url(./assets/fonts/Kanit-Light.ttf);
 }
 
+@media (max-width: 1199px) {
+    #mainbox{
+        flex-direction: column;
+    }
+    #defmap{
+        margin-top: 40px;
+    }
+  }
+
+@media (max-width:617px){
+    #defmap{
+        width: 5vw;
+    }
+}
+
+#defmap{
+    width:75%;
+    height: 400px;    
+    font-size: 0;
+    background-color: #001f3f;
+    border-radius: 7px;
+
+}
+
 .main{
     font-family: cipbox;
 }
@@ -19,7 +43,6 @@
     font-size:30px;
     color:#001f3f;
     font-family: headerfont;
-    width: 100vw;
     align-items: center;
 }
 

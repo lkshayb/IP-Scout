@@ -42,7 +42,7 @@ function App() {
     <div className="main">
       <div>
         <div className="header">
-          <h1>Locate Any IP address</h1>
+          <h1 style={{textShadow:"5px 5px 2px white"}}>Locate Any IP address</h1>
         </div>
         <hr  style={{height:2,borderWidth:0,color:"black",backgroundColor:"black",margin:0,padding:0}}/>
         <div className="cipbar">
@@ -80,7 +80,7 @@ function App() {
       <div>
         {ipdet ? (
           <div style={{display:"flex",justifyContent:'center'}}>
-            <div style={{display:"flex",backgroundColor:"green",padding:20,paddingBottom:25,justifyContent:"space-evenly",width:"80vw",borderRadius:10,boxShadow:"5px 5px 8px black",alignItems:"center"}}>
+            <div id="mainbox" style={{display:"flex",backgroundColor:"green",padding:20,paddingBottom:25,justifyContent:"space-evenly",width:"80vw",borderRadius:10,boxShadow:"5px 5px 8px black",alignItems:"center",marginBottom:60}}>
               <div style={{display:"flex",flexDirection:"column",gap:15}}>
                 <div>
                   <h1>Your IP address</h1>
@@ -95,14 +95,14 @@ function App() {
                   <span style={{color:"white",fontSize:23,marginTop:0}}>{ipdet.region} , {ipdet.country_name} , {ipdet.continent_name}</span>
                 </div> 
               </div>
-              <div>
+              <div id="defmap">
                 <Map
                   initialViewState={{
                     longitude: ipdet.longitude || 0,
                     latitude: ipdet.latitude || 0,
                     zoom: 11,
                   }}
-                  style={{ width: 700, height: 400,fontSize:0 }}
+                  style={{height:400}}
                   mapStyle="https://api.maptiler.com/maps/streets/style.json?key=SjSnUEMaVUEmC0E8TN03	"
                 />
               </div>
