@@ -25,18 +25,17 @@ function App() {
         alert("Invalid IP address");
         return;
      }
-    useEffect(() => {
-      fetch('https://api.ipdata.co/'+customIp+'?api-key=043f43693125248210d507b5abf343e3d1b7496874d1b3eef2d814ae')
+    
+    fetch('https://api.ipdata.co/'+customIp+'?api-key=043f43693125248210d507b5abf343e3d1b7496874d1b3eef2d814ae')
       .then((r) => r.json())
       .then((data) => {
         setcIPdet(data);
         setcdata(true)
-      })
-      .catch((error) => {
-        console.error("Error:",error);
-      });
-    },[])
-
+        console.log(cIPdet)
+    })
+    .catch((error) => {
+      console.error("Error:",error);
+    });
   }
 
   return (
