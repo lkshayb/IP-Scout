@@ -39,10 +39,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="main">
       <div>
-        <h1>Find The Approx Location For An IP Address.</h1>
-        <div>
+        <div className="header">
+          <h1>Locate Any IP address</h1>
+        </div>
+        <hr  style={{height:2,borderWidth:0,color:"black",backgroundColor:"black",margin:0,padding:0}}/>
+        <div className="cipbar">
           <input
             type="text"
             placeholder="Enter IP address"
@@ -64,37 +67,48 @@ function App() {
                 />
               </div>
           ) : (
-            <div>
-              Result Here
-            </div>
+            <div style={{display:"flex",justifyContent:"center"}}>
+              <div className="cipdisplay">
+                Enter an IP Address to get Started
+              </div>
+            </div>  
           )}
           <br />
-          <hr />
+          
         </div>
       </div>
       <div>
         {ipdet ? (
-          <div>
-            <div>
-              <h2>Your IP address</h2>
-              <span>{ipdet.ip}</span>
-            </div>
-            <div>
-              <h2>Your Approx Coordinates</h2>
-              <span>{ipdet.longitude}, {ipdet.latitude}</span>
-            </div>
-            <div>
-              <Map
-                initialViewState={{
-                  longitude: ipdet.longitude || 0,
-                  latitude: ipdet.latitude || 0,
-                  zoom: 12,
-                }}
-                style={{ width: 900, height: 400,fontSize:0 }}
-                mapStyle="https://api.maptiler.com/maps/streets/style.json?key=SjSnUEMaVUEmC0E8TN03	"
-              />
+          <div style={{display:"flex",justifyContent:'center'}}>
+            <div style={{display:"flex",backgroundColor:"green",padding:20,paddingBottom:25,justifyContent:"space-evenly",width:"80vw",borderRadius:10,boxShadow:"5px 5px 8px black",alignItems:"center"}}>
+              <div style={{display:"flex",flexDirection:"column",gap:15}}>
+                <div>
+                  <h1>Your IP address</h1>
+                  <span style={{color:"white",fontSize:23,marginTop:0}}>{ipdet.ip}</span>
+                </div>
+                <div>
+                  <h1>Your Approx Coordinates</h1>
+                  <span style={{color:"white",fontSize:23,marginTop:0}}>{ipdet.longitude}, {ipdet.latitude}</span>
+                </div> 
+                <div>
+                  <h1>Region</h1>
+                  <span style={{color:"white",fontSize:23,marginTop:0}}>{ipdet.region} , {ipdet.country_name} , {ipdet.continent_name}</span>
+                </div> 
+              </div>
+              <div>
+                <Map
+                  initialViewState={{
+                    longitude: ipdet.longitude || 0,
+                    latitude: ipdet.latitude || 0,
+                    zoom: 11,
+                  }}
+                  style={{ width: 700, height: 400,fontSize:0 }}
+                  mapStyle="https://api.maptiler.com/maps/streets/style.json?key=SjSnUEMaVUEmC0E8TN03	"
+                />
+              </div>
             </div>
           </div>
+          
         ) : (
           <h2>Loading...</h2>
         )}

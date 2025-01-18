@@ -1,0 +1,76 @@
+@font-face {
+    font-family:headerfont;
+    src: url(./assets/fonts/Jersey15-Regular.ttf);
+}
+@font-face{
+    font-family: cipbox;
+    src: url(./assets/fonts/Kanit-Light.ttf);
+}
+
+.main{
+    font-family: cipbox;
+}
+
+.header{
+    display:flex;
+    justify-content:center;
+    margin:20px;
+    margin-right: 0px;
+    font-size:30px;
+    color:#001f3f;
+    font-family: headerfont;
+    width: 100vw;
+    align-items: center;
+}
+
+.cipbar{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 70px;
+
+}
+
+.cipbar input{
+    padding:10px 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 500px;
+    border: 2px solid #CCCCCC;
+    border-right: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor:default
+    
+}
+
+.cipbar input::placeholder{
+    color: #888888;
+}
+
+.cipbar button{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding:10px 20px;
+    border-left: none;
+    border: 2px solid #005ec9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #007BFF;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.cipbar button:hover{
+    background-color: #005ec9;
+}
+
+.cipdisplay{
+    display: flex;
+    justify-content: center;
+    background-color: #005ec9;
+    width: 75vw;
+    margin-top: 75px;
+    padding: 50px;
+    border-radius: 20px;
+    font-family: cipbox;
+}
