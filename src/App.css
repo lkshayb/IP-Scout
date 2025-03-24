@@ -20,6 +20,19 @@
     .defmap{
         width: 5vw;
     }
+  
+}
+@media (min-width:524px){
+    .header{
+        display: flex;
+    }
+    
+}
+@media (max-width : 524px){
+    .buttons{
+        display: flex;
+        justify-content: center
+    }
 }
 
 .defmap{
@@ -36,8 +49,7 @@
 }
 
 .header{
-    display:flex;
-    justify-content:center;
+    justify-content:space-around;
     margin:20px;
     margin-right: 0px;
     font-size:30px;

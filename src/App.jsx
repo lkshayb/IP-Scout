@@ -43,6 +43,16 @@ function App() {
       });
   }
 
+  function Button(props){
+    return(
+      <div style={{marginLeft:50}}>
+        <a href={props.link} target="_blank" style={{textDecoration:"none",color:"black",fontSize:40}}>
+          {props.name}
+        </a>
+      </div>
+    )
+  }
+
   return (
     <div className="main">
       <div>
@@ -50,12 +60,15 @@ function App() {
           <h1 style={{ textShadow: "5px 5px 2px white" }}>
             Locate Any IP address
           </h1>
+          <div className="buttons">
+            <Button link="https://github.com/lakshayb30" name="Github"/>
+            <Button link="https://www.linkedin.com/in/lakshay-bhatia-22340a246" name = "LinkedIn"/>
+          </div>
         </div>
         <hr
           style={{
             height: 2,
             borderWidth: 0,
-            color: "black",
             backgroundColor: "black",
             margin: 0,
             padding: 0,
@@ -144,14 +157,14 @@ function App() {
                   </div>
                 </div>
               ) : (
-                <span>Enter an IP Address to get Started</span>
+                <span style={{fontSize:50,fontWeight:700}}>Enter an IP Address to get Started</span>
               )}
             </div>
           </div>
           <br />
         </div>
       </div>
-      <div>
+      <div style={{marginTop:80}}>
         {ipdet ? (
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div
