@@ -72,18 +72,6 @@ https://ip-finder-mu.vercel.app/
 ```
 ---
 
-## 📜 License
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 📞 Contact
-For questions or feedback, feel free to reach out:
-- **GitHub Issues**: [Open an issue](https://github.com/your-username/ip-locator/issues)
-- **Email**: your-email@example.com
-
----
-
 ## ⭐ Show Your Support
 If you like this project, please consider **starring** ⭐ the repository to support development!
 
