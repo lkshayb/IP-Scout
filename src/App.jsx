@@ -113,6 +113,22 @@ function App() {
                           {cIPdet.continent_name}
                         </span>
                       </div>
+                      <div>
+                        <h1>TimeZone</h1>
+                        <span style={{ color: "white", fontSize: 23, marginTop: 0 }}>
+                          {cIPdet.time_zone.name } , { cIPdet.time_zone.abbr}
+                        </span>
+                      </div>
+                      <div>
+                        <h1>Telephone Code</h1>
+                        <span
+                          style={{ color: "white", fontSize: 23, marginTop: 0 ,background:"#ff80ff",paddingRight:50,borderRadius:25,border:"3px solid black" }}
+                        >
+                          <img style={{marginRight:50,marginLeft:50}} src={cIPdet.flag}/>
+                          +{cIPdet.calling_code}
+                        </span>
+                      </div>
+
                     </div>
                     <div className="defmap">
                       <Map
@@ -163,7 +179,9 @@ function App() {
                   </span>
                 </div>
                 <div>
-                  <h1>Your Approx Coordinates</h1>
+                  <h1>
+                    Your Approx Coordinates
+                  </h1>
                   <span style={{ color: "white", fontSize: 23, marginTop: 0 }}>
                     {ipdet.longitude}, {ipdet.latitude}
                   </span>
@@ -174,6 +192,19 @@ function App() {
                     {ipdet.region} , {ipdet.country_name} ,{" "}
                     {ipdet.continent_name}
                   </span>
+                </div>
+                <div>
+                  <h1>TimeZone</h1>
+                  <span style={{ color: "white", fontSize: 23, marginTop: 0 }}>
+                    {ipdet.time_zone.name } , { ipdet.time_zone.abbr}
+                  </span>
+                </div>
+                <div>
+                    <h1>Telephone Code</h1>
+                    <span style={{ color: "white", fontSize: 23, marginTop: 0 ,background:"#ff80ff",paddingRight:50,borderRadius:25,border:"3px solid black"}}>
+                      <img style={{marginRight:50,marginLeft:50}} src={ipdet.flag}/>
+                      +{ipdet.calling_code}
+                    </span>
                 </div>
               </div>
               <div className="defmap">
