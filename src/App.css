@@ -1,100 +1,341 @@
 @font-face {
-    font-family:headerfont;
-    src: url(./assets/fonts/Jersey15-Regular.ttf);
-}
-@font-face{
     font-family: cipbox;
     src: url(./assets/fonts/Kanit-Light.ttf);
 }
 
-@media (max-width: 1199px) {
-    .mainbox{
-        flex-direction: column;
-    }
-    .defmap{
-        margin-top: 40px;
-    }
-  }
-
-@media (max-width:617px){
-    .defmap{
-        width: 5vw;
-    }
-  
-}
-@media (min-width:524px){
-    .header{
-        display: flex;
-    }
-    
-}
-@media (max-width : 524px){
-    .buttons{
-        display: flex;
-        justify-content: center
-    }
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
 }
 
-.defmap{
-    width:80%;
-    height: auto;    
-    font-size: 0;
-    background-color: #001f3f;
-    border-radius: 7px;
-
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
 }
 
-.main{
+.main {
     font-family: cipbox;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.header{
-    justify-content:space-around;
-    margin:20px;
-    margin-right: 0px;
-    font-size:30px;
-    color:#001f3f;
-    font-family: headerfont;
+.header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, var(--card-background) 0%, #f0f9ff 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
 }
 
-.cipbar{
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    border-radius: 2px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    background-color: var(--card-background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.buttons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.buttons a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cipbar {
     display: flex;
     justify-content: center;
-    margin: 20px;
-    margin-top: 70px;
-
+    margin: 40px 0;
+    padding: 0 20px;
+    position: relative;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cipbar input{
-    padding:10px 15px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    width: 500px;
-    border: 2px solid #CCCCCC;
+.cipbar input {
+    padding: 16px 24px;
+    border-radius: 12px 0 0 12px;
+    width: 100%;
+    border: 2px solid var(--border-color);
     border-right: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    cursor:default
-    
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.cipbar input::placeholder{
-    color: #888888;
+.cipbar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+    background: white;
 }
 
-.cipbar button{
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding:10px 20px;
-    border-left: none;
-    border: 2px solid #005ec9;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    background-color: #007BFF;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+.cipbar input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.cipbar button {
+    padding: 16px 32px;
+    border-radius: 0 12px 12px 0;
+    border: none;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    position: relative;
+    overflow: hidden;
 }
-.cipbar button:hover{
-    background-color: #005ec9;
+
+.cipbar button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cipbar button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.cipbar button:hover::before {
+    opacity: 1;
+}
+
+.cipbar button:active {
+    transform: translateY(0);
+}
+
+.mainbox {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.05),
+        0 1px 8px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+    max-width: 1200px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.mainbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary-color),
+        var(--secondary-color),
+        var(--primary-color)
+    );
+    background-size: 200% 100%;
+    animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.05),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 12px rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.info-card h1 {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-card span {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.defmap {
+    width: 100%;
+    height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cipbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 16px;
+    }
+
+    .cipbar input {
+        border-radius: 12px;
+        border-right: 2px solid var(--border-color);
+        padding: 14px 20px;
+    }
+
+    .cipbar button {
+        border-radius: 12px;
+        padding: 14px 24px;
+        width: 100%;
+    }
+
+    .mainbox {
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    .info-grid {
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .info-card h1 {
+        font-size: 1rem;
+    }
+
+    .info-card span {
+        font-size: 1.2rem;
+    }
+
+    .defmap {
+        height: 300px;
+        border-radius: 12px;
+    }
 }
