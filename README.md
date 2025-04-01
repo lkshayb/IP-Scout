@@ -51,8 +51,10 @@ npm run dev
 ```
 
 ## 📷 Screenshots
-![image](https://github.com/user-attachments/assets/b1a725a4-5e8a-4f35-8bde-70803c3420c6)
-![image](https://github.com/user-attachments/assets/5a8ca205-e9f7-443e-af8a-158fdb29091a)
+![image](https://github.com/user-attachments/assets/e40d0df7-8166-4a16-b248-c34491f14350)
+![image](https://github.com/user-attachments/assets/5328cd3e-d896-4a48-9de5-5c48795c316d)
+
+
 
 ---
 
