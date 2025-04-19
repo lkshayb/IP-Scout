@@ -111,7 +111,7 @@ function App() {
         <h1>IPScout</h1>
         <div className="buttons">
           <SocialButton 
-            link="https://github.com/lakshayb30" 
+            link="https://github.com/lkshayb" 
             name="GitHub"
             icon={
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
