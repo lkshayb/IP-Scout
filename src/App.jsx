@@ -3,6 +3,9 @@ import * as React from "react";
 import "./App.css";
 import Map from "react-map-gl/maplibre";
 
+const ipdata_apikey = import.meta.env.VITE_IPDATA_API_KEY;
+const maptiler_apikey = import.meta.env.VITE_MAPTILER_API_KEY;
+
 function App() {
   const [ipdet, setIpdet] = useState(null); 
   const [customIp, setCustomIp] = useState(""); 
@@ -12,7 +15,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      "https://api.ipdata.co/?api-key=043f43693125248210d507b5abf343e3d1b7496874d1b3eef2d814ae"
+      `https://api.ipdata.co/?api-key=${ipdata_apikey}`
     )
       .then((r) => r.json())
       .then((data) => {
@@ -28,7 +31,7 @@ function App() {
   function initsearch() {
     if (!customIp) {alert("Please enter a valid IP address");return;}
     setIsLoading(true);
-    fetch("https://api.ipdata.co/"+customIp+"?api-key=043f43693125248210d507b5abf343e3d1b7496874d1b3eef2d814ae")
+    fetch(`https://api.ipdata.co/${customIp}?api-key=${ipdata_apikey}`)
       .then((r) => r.json())
       .then((data) => {
         setcIPdet(data);
@@ -98,7 +101,8 @@ function App() {
               zoom: 11,
             }}
             style={{ height: "100%" }}
-            mapStyle="https://api.maptiler.com/maps/streets/style.json?key=SjSnUEMaVUEmC0E8TN03"
+            
+            mapStyle={`https://api.maptiler.com/maps/streets/style.json?key=${maptiler_apikey}`}
           />
         </div>
       </div>
