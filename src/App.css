@@ -301,6 +301,7 @@ body {
     }
 
     .cipbar input {
+        width: auto;
         border-radius: 12px;
         border-right: 2px solid var(--border-color);
         padding: 14px 20px;
