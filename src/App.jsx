@@ -124,7 +124,7 @@ function App() {
             }
           />
           <SocialButton 
-            link="https://www.linkedin.com/in/lakshay-bhatia-22340a246" 
+            link="https://www.linkedin.com/in/lkshayb" 
             name="LinkedIn"
             icon={
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
